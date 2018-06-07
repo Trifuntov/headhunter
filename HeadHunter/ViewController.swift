@@ -7,26 +7,24 @@
 //
 
 import UIKit
-
+import WebKit
 class ViewController: UIViewController {
 
     @IBOutlet weak var textNumber: UITextField!
     
-    @IBOutlet weak var webView: UIWebView!
+    @IBOutlet weak var webView: WKWebView!
+    
     
     let url = "https://hh.ru"
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        loadAddressURL()
-    }
-    func loadAddressURL() {
-        let requestURL = NSURL (string: url)
-        let request = NSURLRequest(URL: requestURL)
         
-        WebView.loadRequest(request)
     }
+   
+    
+
 
 
 }

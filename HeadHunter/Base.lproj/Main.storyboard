@@ -18,10 +18,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uHe-eK-vLl">
-                                <rect key="frame" x="0.0" y="112" width="375" height="555"/>
-                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            </webView>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter the number here" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="PIX-b2-PV9">
                                 <rect key="frame" x="46" y="42" width="282" height="30"/>
                                 <constraints>
@@ -31,21 +27,29 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                             </textField>
+                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NXo-wE-AAE">
+                                <rect key="frame" x="0.0" y="98" width="375" height="569"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <wkWebViewConfiguration key="configuration">
+                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                    <wkPreferences key="preferences"/>
+                                </wkWebViewConfiguration>
+                            </wkWebView>
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.58980089430000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="NXo-wE-AAE" firstAttribute="top" secondItem="PIX-b2-PV9" secondAttribute="bottom" constant="26" id="25B-eM-dEX"/>
                             <constraint firstItem="PIX-b2-PV9" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="7A4-fx-4qh"/>
-                            <constraint firstItem="uHe-eK-vLl" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="DU5-eg-9fj"/>
                             <constraint firstItem="PIX-b2-PV9" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="22" id="UJM-Pt-5u5"/>
-                            <constraint firstItem="uHe-eK-vLl" firstAttribute="top" secondItem="PIX-b2-PV9" secondAttribute="bottom" constant="40" id="YtB-YV-9I3"/>
-                            <constraint firstItem="uHe-eK-vLl" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="a2F-Dw-gx7"/>
-                            <constraint firstItem="uHe-eK-vLl" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="uSG-Ui-QFA"/>
+                            <constraint firstItem="NXo-wE-AAE" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="bWq-Jw-FlK"/>
+                            <constraint firstItem="NXo-wE-AAE" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="je4-eJ-D7W"/>
+                            <constraint firstItem="NXo-wE-AAE" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="zN0-Mc-vBX"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
                         <outlet property="textNumber" destination="PIX-b2-PV9" id="5be-AP-IDu"/>
-                        <outlet property="webView" destination="uHe-eK-vLl" id="Fni-tv-bQf"/>
+                        <outlet property="webView" destination="NXo-wE-AAE" id="yaQ-3G-TQs"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
