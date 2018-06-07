@@ -15,13 +15,20 @@ class ViewController: UIViewController {
     @IBOutlet weak var webView: WKWebView!
     
     
-    let url = "https://hh.ru"
+    //let url = "https://hh.ru"
+ 
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
         
+        let url = URL(string: "https://hh.ru")
+        let request = URLRequest(url: url!)
+        
+        webView.load(request)
+        
+       
     }
+    
 
 }
 
