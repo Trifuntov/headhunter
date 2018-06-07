@@ -23,12 +23,29 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var webView: WKWebView!
     
+    func loadUrl() {
+        let url = URL(string: hh)
+        let request = URLRequest(url: url!)
+        webView.load(request)
+    }
+    
+    func validateUrl (urlString: String?) -> Bool { //check URL
+        let url: NSURL? = NSURL(string: urlString!)
+        if url != nil {
+            return true
+        }
+        return false
+    }
+    
     @IBAction func search(_ sender: UITextField) { // search by number
         let searchNumber = textNumber.text!
-        print("\(searchNumber)")
         hh = "https://hh.ru/vacancy/\(searchNumber)"
-        viewDidLoad()
-        return textNumber.text = ""
+        if validateUrl(urlString: hh) {
+            loadUrl()
+            textNumber.text = ""
+        } else {
+            textNumber.text = ""
+        }
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) { // hide the keyboard
