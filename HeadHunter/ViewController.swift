@@ -22,10 +22,14 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view, typically from a nib.
         
     }
+<<<<<<< HEAD
    
     
 
 
+=======
+    
+>>>>>>> e898f2cf9c070780f6144c526b48db421b3aa97a
 
 }
 
